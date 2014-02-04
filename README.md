@@ -7,7 +7,7 @@ Just copy the files to `system/modules/ce_groups` and run a database-update. Or 
 
 After installation you could create a new Contentelement `Element Group`.
 
-[Youtube demo video](http://www.youtube.com/watch?v=WVyXURi3DuM)
+[![Demo Video on Youtube](http://img.youtube.com/vi/WVyXURi3DuM/0.jpg)](http://www.youtube.com/watch?v=WVyXURi3DuM)
 
 License: http://www.gnu.org/licenses/lgpl-3.0.html LGPL <br>
 Author: Christoph Wiechert :: [4ward.media](http://www.4wardmedia.de)
