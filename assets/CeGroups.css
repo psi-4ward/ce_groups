@@ -1,0 +1,63 @@
+li.ce_group_header {
+	border-left: 10px solid #e1e1e1;
+	border-top: 10px solid #e1e1e1;
+	border-bottom: 0 solid #e1e1e1;
+	background: #F3F3F3;
+	font-weight: bold;
+}
+li.ce_group_stop {
+	background: #F3F3F3;
+	font-weight: bold;
+	border-left: 10px solid #e1e1e1;
+	border-bottom: 10px solid #e1e1e1;
+}
+
+li.ce_group_stop.ce_group_collapsed {
+	border-bottom: 0 solid;
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+li.ce_group_inGroup {
+	border-left: 10px solid;
+	max-height: 200px;
+	overflow: hidden;
+
+	-webkit-transition: max-height 0.5s ease-in-out;
+	-moz-transition: max-height 0.5s ease-in-out;
+	-o-transition: max-height 0.5s ease-in-out;
+	transition: max-height 0.5s ease-in-out;
+}
+
+li.ce_group_header .tl_content,
+li.ce_group_inGroup .tl_content{
+	width: 683px;
+}
+
+li.ce_group_header .tl_content.indent,
+li.ce_group_inGroup .tl_content.indent {
+	border-left: 0 solid;
+	border-right: 0 solid;
+}
+
+li.ce_group_inGroup.ce_group_collapsed {
+	max-height: 0;
+}
+
+.ce_group_toggler {
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.ce_group_collapsed .ce_group_toggler {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
