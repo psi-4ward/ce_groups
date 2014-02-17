@@ -114,7 +114,6 @@ Class.refactor(Sortables, {
     if(elem && (parent = elem.getPrevious('li')) && parent.hasClass('ce_group_collapsed')) {
       var lastElem = findGroupElems(parent).getLast();
       if(!lastElem) return;
-      console.log('injectAfter', elem, lastElem);
       elem.inject(lastElem, 'after');
     }
   }
