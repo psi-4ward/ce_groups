@@ -18,14 +18,6 @@ Class.refactor(Sortables, {
   }
 });
 
-// touch fix
-if(!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
-  Browser.Features.Touch = false;
-}
-window.addEvent('domready',function(){
-  if(!Browser.Features.Touch) $(document.body).removeClass('touch');
-});
-
 (function() {
   var groupHeaders = [];
 
@@ -142,6 +134,7 @@ window.addEvent('domready',function(){
         groupHeader.getElements('a.toggle, img.limit_toggler, .cte_type, .limit_height').destroy();
         groupHeader.addEvent('click', function(ev) {
           if(ev.target.get('tag') == 'a' || ev.target.hasClass('drag-handle')) return;
+          groupHeader.getElement('div').removeAttribute('data-visited');
           toggle(groupHeader);
         });
       });
@@ -164,6 +157,7 @@ window.addEvent('domready',function(){
       Elements.from('<img class="ce_group_toggler" alt="" title="" width="20" height="24" src="system/themes/default/images/expand.gif" style="cursor: pointer;">').inject(el, 'bottom');
       li.addEvent('click', function(ev) {
         if(ev.target.get('tag') == 'a' || ev.target.hasClass('drag-handle')) return;
+        el.removeAttribute('data-visited');
         toggle(li);
       });
       groupHeaders.push(li);
