@@ -56,10 +56,14 @@ window.addEvent('domready',function(){
     var operations = groupHeader.getElements('a.copy, a.cut, a[href*=act=create], img.drag-handle');
     findGroupElems(groupHeader).forEach(function(el) {
       if(collapsed) {
-        el.addClass('ce_group_collapsed');
+        el.store('openHeight', el.getSize().y).addClass('ce_group_collapsed');
+        el.set('tween', {duration: 500}).tween('height', [el.getSize().y, 0]);
         operations.fade('out');
       } else {
         el.removeClass('ce_group_collapsed');
+        el.set('tween', {duration: 500}).tween('height', el.retrieve('openHeight')).get('tween').chain(function() {
+          el.setStyle('height', 'auto');
+        });
         operations.fade('in');
       }
     });
