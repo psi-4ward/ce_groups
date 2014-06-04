@@ -14,7 +14,15 @@ class ContentCeGroup extends \ContentElement {
 
 	public function generate()
 	{
-		if(TL_MODE != 'BE') return '';
+		if(TL_MODE != 'BE') {
+            if($GLOBALS['TL_CONFIG']['ce_groups_renderFE']) {
+                $groupname = standardize($this->ce_group_name);
+                if(!$groupname) $groupname = 'id'.$this->id;
+                return '<div class="ge-group ge-group-'.$groupname.'">';
+            } else {
+                return '';
+            }
+        }
 
 		return '<div class="ce_group_header" data-color="#'.$this->ce_group_color.'">'
 					.'<p>'.$this->ce_group_name.'</p>'

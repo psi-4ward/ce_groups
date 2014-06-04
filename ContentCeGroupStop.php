@@ -14,7 +14,13 @@ class ContentCeGroupStop extends \ContentElement {
 
 	public function generate()
 	{
-		if(TL_MODE != 'BE') return '';
+        if(TL_MODE != 'BE') {
+            if($GLOBALS['TL_CONFIG']['ce_groups_renderFE']) {
+                return '</div>';
+            } else {
+                return '';
+            }
+        }
 
 		return '<div class="ce_group_stop">'
 					.'<p>'.$GLOBALS['TL_LANG']['CTE']['ce_group_stop']['0'].'</p>'
